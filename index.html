@@ -33,6 +33,14 @@
       font-size: 1.2em;
       margin-bottom: 30px;
     }
+    input {
+      font-size: 1.1em;
+      padding: 10px;
+      width: 80%;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+    }
     button {
       font-size: 1.2em;
       padding: 10px 30px;
@@ -47,20 +55,41 @@
       color: #00ffcc;
       margin-top: 30px;
     }
+    .signature-list {
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>我与天使签下契约</h1>
     <p>从此与魔鬼无缘，善良将与你同行。</p>
-    <button onclick="signContract()">我愿意签下契约 ✒️</button>
+    <div id="formSection">
+      <input id="nameInput" type="text" placeholder="请输入你的名字">
+      <button onclick="signContract()">我愿意签下契约 ✒️</button>
+    </div>
     <div id="signedMessage" class="signed"></div>
+    <div class="signature-list">
+      <p>👼 已签署契约的人：</p>
+      <ul style="list-style: none; padding: 0;">
+        <li>李雨佳</li>
+      </ul>
+    </div>
   </div>
 
   <script>
     function signContract() {
+      const name = document.getElementById('nameInput').value.trim();
       const message = document.getElementById('signedMessage');
-      message.innerText = '✅ 你已成功签下契约！欢迎进入善良的世界 ✨';
+      const formSection = document.getElementById('formSection');
+      if (name) {
+        formSection.style.display = 'none';
+        message.innerText = `✅ ${name} 已成功签下契约！欢迎进入善良的世界 ✨`;
+      } else {
+        message.innerText = '请先输入你的名字再签约哦！';
+      }
     }
   </script>
 </body>
