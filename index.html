@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我与天使签下契约</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "STKaiti", KaiTi, serif;
+      background: url('https://images.unsplash.com/photo-1549887534-4a045c03f3c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px 30px;
+      background: #ffd700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #000;
+    }
+    .signed {
+      font-size: 1.5em;
+      color: #00ffcc;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>我与天使签下契约</h1>
+    <p>从此与魔鬼无缘，善良将与你同行。</p>
+    <button onclick="signContract()">我愿意签下契约 ✒️</button>
+    <div id="signedMessage" class="signed"></div>
+  </div>
+
+  <script>
+    function signContract() {
+      const message = document.getElementById('signedMessage');
+      message.innerText = '✅ 你已成功签下契约！欢迎进入善良的世界 ✨';
+    }
+  </script>
+</body>
+</html>
